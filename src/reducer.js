@@ -1,24 +1,5 @@
 export const initialState = {
-  basket: [
-    {
-      id: "12442132",
-      title:
-        "AmazonBasics High-Density Exercise, Massage, Muscle Recovery, Round Foam Roller, 12, 18, 24, 36",
-      rating: 5,
-      price: 27.99,
-      image:
-        "https://images-na.ssl-images-amazon.com/images/I/911vOQbliVL._AC_SX679_.jpg",
-    },
-    {
-      id: "12442132",
-      title:
-        "AmazonBasics High-Density Exercise, Massage, Muscle Recovery, Round Foam Roller, 12, 18, 24, 36",
-      rating: 5,
-      price: 27.99,
-      image:
-        "https://images-na.ssl-images-amazon.com/images/I/911vOQbliVL._AC_SX679_.jpg",
-    },
-  ],
+  basket: [],
   user: null,
 };
 
@@ -28,6 +9,11 @@ export const getBasketTotal = basket => (
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "SET_USER": 
+      return {
+        ...state,
+        user: action.user
+      }
     case "ADD_TO_BASKET":
       return {
         ...state,
